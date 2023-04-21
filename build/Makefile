@@ -594,6 +594,7 @@ endif
 sd_image:
 	$(call print_target)
 	-${Q}rm  $(OUTPUT_DIR)/fs
+	${Q}cp $(BUILD_PATH)/boards/${CHIP_ARCH_L}/${PROJECT_FULLNAME}/genimage.cfg $(OUTPUT_DIR)/
 ifeq ($(CONFIG_BUILDROOT_FS),y)
 	${Q}rm $(OUTPUT_DIR)/br-rootfs -rf
 	${Q}ln -s $(OUTPUT_DIR)/br-rootfs $(OUTPUT_DIR)/fs
